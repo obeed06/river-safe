@@ -10,8 +10,8 @@ function Quiz({questions}) {
   return (
     <section className="layout-section theme-c">
       <Container sx={{pt:3}}>
-      {questions.length > 0 && questions.map((question) => (
-                <Question key={question.id} question={question} />
+      {questions.length > 0 && questions.map((question, index) => (
+                <Question key={question.id} question={question} questionNumber={index + 1} totalQuestions={questions.length}/>
             ))}
       </Container>
     </section>

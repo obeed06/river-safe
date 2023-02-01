@@ -10,12 +10,12 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-function Question({ question }) {
+function Question({ question, questionNumber, totalQuestions }) {
   console.log(question);
   return (
     <>
       <a id="leadtime" className="question-anchor"></a>
-      <h3 className="q-eyebrow">Question 1 of 5</h3>
+      <h3 className="q-eyebrow">Question {questionNumber} of {totalQuestions}</h3>
       <Grid container justifyContent="center" alignItems="center" spacing={2}>
         <Grid item md={4}>
           <h2 className="q-headline">{question.metric}</h2>
@@ -56,6 +56,8 @@ function Question({ question }) {
 
 Question.propTypes = {
   question: PropTypes.node.isRequired,
+  questionNumber: PropTypes.string.isRequired,
+  totalQuestions: PropTypes.string.isRequired,
 };
 
 export default Question;
