@@ -1,0 +1,12 @@
+.question-anchor {
+    visibility: hidden;
+    position: relative;
+    left: 0px;
+    top: -100px;
+  }
+  
+  h3.q-eyebrow {
+    text-transform: uppercase;
+    font-size: 70%;
+    color: #777777 !important;
+  }

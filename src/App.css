@@ -1,13 +1,23 @@
+/* ----- Global ----- */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #031926;
+  background: #031926;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 /* ----- Banner ----- */
 #banner {
   min-height: 300px;
-  color: #FFF;
+  color: #fff;
   background: center center no-repeat #022f41;
   background-size: cover;
 }
 
 #banner a {
-  color: #FFF;
+  color: #fff;
 }
 
 #banner .wrapper {
@@ -29,5 +39,37 @@
 #banner .content h2 {
   max-width: 580px;
   margin: 0 auto;
-  color: #F9B02A;
+  color: #f9b02a;
 }
+
+#main .layout-section {
+}
+#main .layout-section.theme-a {
+  background: #fff;
+}
+#main .layout-section.theme-b {
+  color: #fff;
+  background: #022f41;
+}
+#main .layout-section.theme-b a {
+  color: #fff;
+}
+#main .layout-section.theme-b h1,
+#main .layout-section.theme-b h2,
+#main .layout-section.theme-b h3 {
+  color: #f9b02a;
+}
+#main .layout-section.theme-c {
+  background: #fafafa;
+}
+#main .layout-section.theme-d {
+  background: #f9b02a;
+}
+
+#main .layout-section.type-a {
+  text-align: left;
+}
+#main .layout-section.type-b {
+  text-align: center;
+}
+
