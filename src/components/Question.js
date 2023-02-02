@@ -22,7 +22,7 @@ function Question({ question, questionNumber, totalQuestions }) {
           <div className="q-image">
             <img
               className="general"
-              src={process.env.PUBLIC_URL + "/cloud-server-antenna.svg"}
+              src="/cloud-server-antenna.svg"
               alt="RiverSafe"
             />
           </div>
