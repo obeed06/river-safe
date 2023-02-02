@@ -64,7 +64,7 @@ function Landing() {
             <Grid item md={6}>
               <img
                 className="general"
-                src={process.env.PUBLIC_URL + "/work-confused.svg"}
+                src="/work-confused.svg"
                 alt="RiverSafe"
               />
             </Grid>

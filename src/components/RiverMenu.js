@@ -30,7 +30,7 @@ export default function RiverElevatedAppBar(props) {
         <AppBar>
           <Toolbar>
             <Link sx={{mr: 2}} href="https://riversafe.co.uk/">
-              <img style={{height: '25px'}} src={process.env.PUBLIC_URL + '/riversafe-logo.svg'} alt="RiverSafe"/>
+              <img style={{height: '25px'}} src="/riversafe-logo.svg" alt="RiverSafe"/>
             </Link>
           </Toolbar>
         </AppBar>
