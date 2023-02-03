@@ -11,11 +11,12 @@ import {
 } from "@mui/material";
 
 function Question({ question, questionNumber, totalQuestions }) {
-  console.log(question);
   return (
     <>
       <a id="leadtime" className="question-anchor"></a>
-      <h3 className="q-eyebrow">Question {questionNumber} of {totalQuestions}</h3>
+      <h3 className="q-eyebrow">
+        Question {questionNumber} of {totalQuestions}
+      </h3>
       <Grid container justifyContent="center" alignItems="center" spacing={2}>
         <Grid item md={4}>
           <h2 className="q-headline">{question.metric}</h2>
@@ -37,14 +38,12 @@ function Question({ question, questionNumber, totalQuestions }) {
               name="radio-buttons-group-TODO">
               {question.options.length > 0 &&
                 question.options.map((option) => (
-                  <>
-                    <FormControlLabel
-                      key={option.id}
-                      value={option.value}
-                      control={<Radio />}
-                      label={option.label}
-                    />
-                  </>
+                  <FormControlLabel
+                    key={option.id}
+                    value={option.value}
+                    control={<Radio />}
+                    label={option.label}
+                  />
                 ))}
             </RadioGroup>
           </FormControl>
@@ -55,9 +54,9 @@ function Question({ question, questionNumber, totalQuestions }) {
 }
 
 Question.propTypes = {
-  question: PropTypes.node.isRequired,
-  questionNumber: PropTypes.string.isRequired,
-  totalQuestions: PropTypes.string.isRequired,
+  question: PropTypes.object.isRequired,
+  questionNumber: PropTypes.number.isRequired,
+  totalQuestions: PropTypes.number.isRequired,
 };
 
 export default Question;
