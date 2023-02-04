@@ -1,0 +1,43 @@
+type Quiz @model @auth(rules: [ { allow: public } ] ){
+  id: ID!
+  name: String!
+  description: String
+  slug: String!
+  questions: [Question] @hasMany(indexName:"byQuestion", fields:["id"])
+}
+
+type Question @model {
+  id: ID!
+  metric: String!
+  question: String!
+  options: [Option] @hasMany(indexName:"byOption", fields:["id", "value"])
+  quiz: Quiz @belongsTo(fields:["quizID", "quizName"])
+  quizID: ID @index(name: "byQuiz", sortKeyFields:["quizName"]) # customized foreign key for parent primary key
+  quizName: String # customized foreign key for parent sort key
+}
+
+type Option @model {
+  id: ID!
+  label: String!
+  value: Int!
+  question: Question @belongsTo(fields:["questionID", "questionName"])
+  questionID: ID @index(name: "byQuiz", sortKeyFields:["questionName"]) # customized foreign key for parent primary key
+  questionName: String # customized foreign key for parent sort key
+}
+
+type QuizResult @model @auth(rules: [ { allow: public } ] ){
+  id: ID!
+  quiz: Quiz @hasOne
+  results: [Result] @hasMany
+  description: String
+  slug: String!
+  questions: [Question] @hasMany(indexName:"byQuestion", fields:["id"])
+}
+
+type Result @model {
+  id: ID!
+  questionID: ID
+  optionID: ID
+  question: Question @hasOne(fields: ["questionID"])
+  option: Option @hasOne(fields: ["optionID"])
+}
